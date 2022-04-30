@@ -10,26 +10,21 @@ const playerSchema = mongoose.Schema({
         type: Number,
         default: 0
     },
-    profitHistory: [{
-        session: {
-            sessionName: {
-                type: String,
-                trim: true,
-                required: true
-            },
-            buyInAmount: Number,
-            chipsPerBuyIn: Number,
-            sessionDate: {
-                type: Date,
-                required: true,
-                default: new Date() + 8
-            },
-            players: [{
-                playerName: String,
-                playerBuyIns: Number,
-                playerChips: Number,
-                playerProfit: Number
-            }]
+    sessionHistory: [{
+        sessionId: {
+            type: String,
+            trim: true,
+            required: true
+        },
+        sessionName: {
+            type: String,
+            trim: true,
+            required: true
+        },
+        sessionDate: {
+            type: Date,
+            trim: true,
+            required: true
         },
         playerProfit: Number
     }]
